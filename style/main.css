@@ -1,0 +1,44 @@
+.main__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+  width: 1000px;
+  padding: 50px 0 50px 0;
+}
+
+.card {
+  height: 184px;
+  width: 316px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card__icon {
+  font-size: 48px;
+  line-height: 48px;
+  margin: 24px 0 18px 0;
+}
+
+.card__title {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 28px;
+  margin: 0;
+}
+
+.card__discription {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  margin: 12px 0 24px 0;
+  color: #3f444a;
+}
