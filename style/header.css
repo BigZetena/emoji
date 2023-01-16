@@ -34,8 +34,8 @@ body {
 }
 
 .input {
-  transition: 0.3s;
-  width: 820px;
+  transition: 0.6s;
+  width: 240px;
   height: 64px;
   background-color: #fff;
   position: absolute;
@@ -48,9 +48,10 @@ body {
 }
 
 .input:focus {
-  transition: 0.3s;
+  transition: 0.6s;
   border: 1px solid #600543;
   outline: none;
+  width: 820px;
 }
 
 .input::placeholder {
