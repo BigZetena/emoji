@@ -1,7 +1,8 @@
 import { data } from "../data/data.js";
 
-const filtredData = dataFiletr(data);
+const uniqData = dataFiletr(data);
 const grid = document.querySelector(".main__wrapper");
+const input = document.querySelector("input");
 
 function dataFiletr(arr) {
   return arr.map((item) => ({
@@ -21,22 +22,17 @@ function createCard(obj) {
   return card;
 }
 
-filtredData.forEach((item) => {
-  grid.append(createCard(item));
-});
+input.addEventListener("input", emojiSearch);
 
-// let obj = {
-//   name: "hui",
-//     height: 24,
-//     sickness: {
-//         aids: true,
-//         sifilis: false
-//     },
-//     standUp: function () {
-//         return this.height = 48
-//     }
-// };
+function emojiSearch(evt) {
+  const filteredData = uniqData.filter(
+    (item) => item.keywords == evt.target.value
+  );
+  if (filteredData == undefined) return;
+  grid.append(createCard(filteredData));
+  console.log(evt.target.value);
+}
 
-// let copy = obj;
-
-// console.log((copy.height = 12), obj);
+// uniqData.forEach((item) => {
+//   grid.append(createCard(item));
+// });
