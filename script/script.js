@@ -22,17 +22,21 @@ function createCard(obj) {
   return card;
 }
 
-input.addEventListener("input", emojiSearch);
-
 function emojiSearch(evt) {
-  const filteredData = uniqData.filter(
-    (item) => item.keywords == evt.target.value
-  );
-  if (filteredData == undefined) return;
-  grid.append(createCard(filteredData));
-  console.log(evt.target.value);
+  grid.innerHTML = "";
+  uniqData
+    .filter(
+      (item) =>
+        item.keywords.toLowerCase().includes(evt.target.value.toLowerCase()) ||
+        item.title.toLowerCase().includes(evt.target.value.toLowerCase())
+    )
+    .forEach((item) => {
+      grid.append(createCard(item));
+    });
 }
 
-// uniqData.forEach((item) => {
-//   grid.append(createCard(item));
-// });
+input.addEventListener("input", emojiSearch);
+
+uniqData.forEach((item) => {
+  grid.append(createCard(item));
+});
