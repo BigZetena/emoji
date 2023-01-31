@@ -43,6 +43,3 @@ input.addEventListener("input", emojiSearch);
 uniqData.forEach((item) => {
   grid.append(createCard(item));
 });
-
-console.log(data);
-console.log(uniqData);
