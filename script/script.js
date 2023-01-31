@@ -15,15 +15,6 @@ function getUniqData(arr) {
   return arrCopy;
 }
 
-// function dataFiletr(arr) {
-//   return arr.map((item) => ({
-//     ...item,
-//     keywords: (item.keywords = [...new Set(item.keywords.split(" "))].join(
-//       " "
-//     )),
-//   }));
-// }
-
 function createCard(obj) {
   const card = document.createElement("div");
   card.className = "card";
