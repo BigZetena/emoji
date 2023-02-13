@@ -1,4 +1,11 @@
-import { data } from "../data/data.js";
+const API = "https://emoji.ymatuhin.workers.dev/";
+
+async function fetchData(url) {
+  let res = await fetch(url);
+  return res.json();
+}
+
+const data = await fetchData(API);
 
 const grid = document.querySelector(".main__wrapper");
 const input = document.querySelector("input");
